@@ -1,9 +1,12 @@
 package com.boymask.rysolvia.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.boymask.rysolvia.ProductsPool;
+import com.boymask.rysolvia.database.prodotti.RysolviaProduct;
 import com.boymask.rysolvia.database.status.Status;
 import com.boymask.rysolvia.database.status.StatusRepository;
 
@@ -39,7 +42,26 @@ public class StatusService {
 		if (inc)
 			s.setBollette_totali(s.getBollette_totali() + 1);
 		save(s);
+	}
 
+	@Transactional
+	public void updateIncasso(String abb) {
+		RysolviaProduct prod = ProductsPool.getProduct(abb);
+		Status s;
+		List<Status> ll = getAll();
+		if (ll.isEmpty()) {
+			s = new Status();
+			save(s);
+		} else
+			s = ll.get(0);
+		
+		BigDecimal precValue = s.getIncassoTotale();
+		if( precValue==null)precValue = new BigDecimal(0);
+
+		s.setIncassoTotale(precValue.add(new BigDecimal(prod.getPrezzo())));
+//		if (inc)
+//			s.setBollette_totali(s.getBollette_totali() + 1);
+		save(s);
 	}
 
 }

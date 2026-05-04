@@ -6,15 +6,19 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.boymask.rysolvia.ProductsPool;
 import com.boymask.rysolvia.controller.beans.UpdaterTokenBean;
-import com.boymask.rysolvia.database.status.StatusRepository;
+import com.boymask.rysolvia.database.users.User;
 import com.boymask.rysolvia.service.StatusService;
+import com.boymask.rysolvia.service.StripeService;
 import com.stripe.model.Price;
 import com.stripe.model.PriceCollection;
 import com.stripe.model.Product;
@@ -24,10 +28,13 @@ import com.stripe.param.ProductListParams;
 
 @RestController
 public class RysolviaController {
-	@Autowired
-	private StatusRepository statusRepository;
+	@Value("${openai.secret.key}")
+	private String openaiSecretKey;
+
 	@Autowired
 	private StatusService statusService;
+	@Autowired
+	private StripeService stripeService;
 
 	@GetMapping("/hello")
 	public String hello() {
@@ -49,6 +56,8 @@ public class RysolviaController {
 			PriceCollection prices = Price.list(priceParams);
 
 			for (Price price : prices.getData()) {
+				
+				if( ProductsPool.getProduct(p.getName())==null)continue;
 
 				Map<String, Object> item = new HashMap<>();
 				item.put("id", p.getId());
@@ -81,4 +90,17 @@ public class RysolviaController {
     	statusService.updateTokens(bean.getToken(),bean.isIncBollette());
     	return ResponseEntity.ok((long)0);
     }
+    
+    @GetMapping("/stripe/init")
+    public ResponseEntity<Long>  initStripe() {
+    	stripeService.init();
+    	return ResponseEntity.ok((long)0);
+    }
+    
+//	@GetMapping("/get/openai_key")
+	public String getOpenAIKey() {
+		
+
+		return openaiSecretKey;
+	}
 }

@@ -2,14 +2,16 @@ package com.boymask.rysolvia.controller;
 
 
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.boymask.rysolvia.database.status.Status;
-import com.boymask.rysolvia.database.users.User;
 import com.boymask.rysolvia.service.StatusService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/status")

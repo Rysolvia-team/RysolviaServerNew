@@ -5,6 +5,8 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.boymask.rysolvia.ProductsPool;
+import com.boymask.rysolvia.database.prodotti.RysolviaProduct;
 import com.boymask.rysolvia.database.users.User;
 import com.boymask.rysolvia.database.users.UserRepository;
 
@@ -14,6 +16,8 @@ import jakarta.transaction.Transactional;
 public class UsersService {
 	@Autowired
 	UserRepository userRepository;
+	@Autowired
+	StatusService statusService;
 
 	public User getUser(String id) {
 		User user = userRepository.findByUserId(id);
@@ -39,21 +43,17 @@ public class UsersService {
 	public void addAbbonamento(String id, String abb) {
 		User uu = userRepository.findByUserId(id);
 		System.out.println(uu);
+		System.out.println("Abb "+abb);
 		uu.setAbbonamento(abb);
-		int numToAdd = 0;
-		switch (abb) {
-		case "Opt1":
-			numToAdd = 1;
-			break;
-		case "Opt2":
-			numToAdd = 5;
-			break;
-		case "Opt3":
-			numToAdd = 10;
-			break;
-		}
+		
+		RysolviaProduct prod = ProductsPool.getProduct(abb);
+		int numToAdd =prod.getNumero_bollette();
+		System.out.println("prod="+abb+"  nm="+numToAdd);
 		int currVal = uu.getBolletteTotali();
 		uu.setBolletteTotali(currVal + numToAdd);
 		userRepository.save(uu);
+		
+		statusService.updateIncasso(abb);
+	
 	}
 }
