@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:replace="fragments/navbar :: navbar"></div>
+
+
+<div sec:authorize="isAuthenticated()">
+<center>
+<h1>Prodotti</h1>
+<br>
+   <table border="1">
+    <tr>
+        <th width="150">Nome</th>
+        <th width="150">Descrizione</th>
+        <th width="150">N.Bollette</th>
+        <th width="150">Prezzo</th>
+       
+    </tr>
+
+    <tr th:each="p : ${products}">
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.description}"></td>
+        <td th:text="${p.numero_bollette}"></td>
+         <td th:text="${p.prezzo}/100"></td>
+        
+    </tr>
+</table></center>
+</div>
+<div sec:authorize="!isAuthenticated()">
+    Non sei loggato
+</div>
+
+
+
+</body>
+</html>

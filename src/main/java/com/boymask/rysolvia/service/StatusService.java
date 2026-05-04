@@ -64,4 +64,12 @@ public class StatusService {
 		save(s);
 	}
 
+	public Status getStatus() {
+	
+		Status s=new Status();
+		List<Status> ll = getAll();
+		if (!ll.isEmpty()) 
+			s = ll.get(0);
+		return s;
+	}
 }

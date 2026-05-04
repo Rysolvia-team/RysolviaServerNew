@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<body>
+
+<div th:fragment="navbar">
+
+    <div style="background:#333; color:white; padding:10px;">
+
+        <!-- Nome app -->
+        <span style="margin-right:20px;">Rysolvia</span>
+
+        <!-- Link base -->
+        <a href="/web/home" style="color:white; margin-right:10px;">Home</a>
+        <a href="/web/products" style="color:white; margin-right:10px;">Prodotti</a>
+
+        <!-- Solo ADMIN -->
+        <a href="/web/admin/dashboard"
+           sec:authorize="hasRole('ADMIN')"
+           style="color:white; margin-right:10px;">
+           Admin
+        </a>
+
+        <!-- Utente loggato -->
+        <span style="float:right;">
+            👤 <span sec:authentication="name"></span>
+
+            <a href="/logout" style="color:white; margin-left:10px;">
+                Logout
+            </a>
+        </span>
+
+    </div>
+
+</div>
+
+</body>
+</html>

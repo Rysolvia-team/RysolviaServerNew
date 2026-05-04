@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:replace="fragments/navbar :: navbar"></div>
+
+
+<div sec:authorize="isAuthenticated()">
+<center>
+<h1>Status</h1>
+<br>
+   <table border="1">
+    <tr>
+        <th width="150">Token</th>
+        <th width="150">Incasso</th>
+       
+    </tr>
+
+    <tr th:each="p : ${status}">
+        <td th:text="${p.token_totali}"></td>
+        <td th:text="${p.incassoTotale}"></td>
+        
+    </tr>
+</table></center>
+</div>
+<div sec:authorize="!isAuthenticated()">
+    Non sei loggato
+</div>
+
+
+
+</body>
+</html>
