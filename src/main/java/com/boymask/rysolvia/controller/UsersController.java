@@ -21,7 +21,6 @@ public class UsersController {
 	@GetMapping("/get/{id}")
 	public User getUser(@PathVariable  String id) {
 		User user = usersService.getUser(id);
-		System.out.println(user);
 
 		return user;
 	}
@@ -31,7 +30,7 @@ public class UsersController {
     public ResponseEntity<User> updateUser(
             @PathVariable String id,
             @RequestBody User user) {
-		System.out.println("AAAAAA "+user);
+
     	usersService.save(user);
     	return ResponseEntity.ok(user);
     }
