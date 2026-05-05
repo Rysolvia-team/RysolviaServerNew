@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.boymask.rysolvia.database.prodotti.RysolviaProduct;
 import com.boymask.rysolvia.database.prodotti.RysolviaProductRepository;
+import com.boymask.rysolvia.database.users.User;
+import com.boymask.rysolvia.database.users.UserRepository;
 import com.boymask.rysolvia.service.StatusService;
 
 @Controller
@@ -19,10 +21,15 @@ public class WebController {
 	StatusService statusService;
 	@Autowired
 	RysolviaProductRepository repo;
+	@Autowired
+	UserRepository usersRepo;
 
 	@GetMapping("/home")
 	public String home(Model model) {
 		model.addAttribute("status", statusService.getStatus());
+		
+		List<User> users = usersRepo.findAll();
+		model.addAttribute("nusers", users.size());
 
 		return "home";
 	}
