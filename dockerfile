@@ -1,17 +1,21 @@
-# Usa Java 21
-FROM eclipse-temurin:21-jdk
+# ===== BUILD STAGE =====
+FROM maven:3.9.9-eclipse-temurin-21 AS build
 
-# Cartella di lavoro
 WORKDIR /app
 
 # Copia tutto il progetto
 COPY . .
 
-# Rende eseguibile Maven wrapper (se presente)
-RUN chmod +x mvnw || true
+# Build jar
+RUN mvn clean package -DskipTests
 
-# Build applicazione
-RUN ./mvnw clean package -DskipTests || mvn clean package -DskipTests
+# ===== RUN STAGE =====
+FROM eclipse-temurin:21-jdk
 
-# Avvio app
-CMD ["java", "-jar", "target/rysolvia-0.0.1-SNAPSHOT.jar"]
+WORKDIR /app
+
+# Copia il jar dal build stage
+COPY --from=build /app/target/rysolvia-0.0.1-SNAPSHOT.jar app.jar
+
+# Avvia app
+CMD ["java", "-jar", "app.jar"]
