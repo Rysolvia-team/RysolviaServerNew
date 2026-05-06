@@ -18,6 +18,6 @@ WORKDIR /app
 COPY --from=build /app/target/rysolvia-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 10000
-
+ENV PORT=10000
 # Avvia app
 CMD ["java", "-jar", "app.jar"]
