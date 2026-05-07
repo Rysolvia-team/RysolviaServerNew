@@ -9,14 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.boymask.rysolvia.ProductsPool;
 import com.boymask.rysolvia.controller.beans.UpdaterTokenBean;
-import com.boymask.rysolvia.database.users.User;
 import com.boymask.rysolvia.service.StatusService;
 import com.boymask.rysolvia.service.StripeService;
 import com.stripe.model.Price;
@@ -72,35 +70,18 @@ public class RysolviaController {
 	
 		return result;
 	}
-
-//	@Transactional
-//	private void testInsert() {
-//		Status s = new Status();
-//		s.setToken_totali(100);
-//		s.setBollette_totali(50);
-//		s.setIncassoTotale(new BigDecimal("1234.56"));
-//
-//		statusRepository.save(s);
-//	}
 	
-    @PutMapping("/update_token")
-    public ResponseEntity<Long>  updateToken(@RequestBody UpdaterTokenBean bean) {
-    	System.out.println("Update token "+bean.getToken());
-    	System.out.println("ic "+bean.isIncBollette());
-    	statusService.updateTokens(bean.getToken(),bean.isIncBollette());
-    	return ResponseEntity.ok((long)0);
-    }
+//    @PutMapping("/update_token")
+//    public ResponseEntity<Long>  updateToken(@RequestBody UpdaterTokenBean bean) {
+//    	System.out.println("Update token "+bean.getToken());
+//    	System.out.println("ic "+bean.isIncBollette());
+//    	statusService.updateTokens(bean.getToken(),bean.isIncBollette());
+//    	return ResponseEntity.ok((long)0);
+//    }
     
     @GetMapping("/stripe/init")
     public ResponseEntity<Long>  initStripe() {
     	stripeService.init();
     	return ResponseEntity.ok((long)0);
     }
-    
-//	@GetMapping("/get/openai_key")
-	public String getOpenAIKey() {
-		
-
-		return openaiSecretKey;
-	}
 }
