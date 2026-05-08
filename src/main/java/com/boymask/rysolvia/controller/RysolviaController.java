@@ -1,7 +1,5 @@
 package com.boymask.rysolvia.controller;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,12 +36,12 @@ public class RysolviaController {
 
 	@GetMapping("/products")
 	public List<Map<String, Object>> getProducts() {
+		
 		List<Map<String, Object>> result = new ArrayList<>();
+		
 		try {
 			ProductListParams params = ProductListParams.builder().build();
 			ProductCollection products = Product.list(params);
-
-			
 
 			for (Product p : products.getData()) {
 
@@ -52,8 +50,9 @@ public class RysolviaController {
 				PriceCollection prices = Price.list(priceParams);
 
 				for (Price price : prices.getData()) {
-					
-					if( ProductsPool.getProduct(p.getName())==null)continue;
+
+					if (ProductsPool.getProduct(p.getName()) == null)
+						continue;
 
 					Map<String, Object> item = new HashMap<>();
 					item.put("id", p.getId());
@@ -66,40 +65,17 @@ public class RysolviaController {
 				}
 			}
 
-			
 		} catch (StripeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		
+
 		}
 		return result;
 	}
-	
-//    @PutMapping("/update_token")
-//    public ResponseEntity<Long>  updateToken(@RequestBody UpdaterTokenBean bean) {
-//    	System.out.println("Update token "+bean.getToken());
-//    	System.out.println("ic "+bean.isIncBollette());
-//    	statusService.updateTokens(bean.getToken(),bean.isIncBollette());
-//    	return ResponseEntity.ok((long)0);
-//    }
-	@GetMapping("/test")
-	public String test() {
-	    try {
-	        URL url = new URL("https://stripe.com");
-	        HttpURLConnection conn =
-	            (HttpURLConnection) url.openConnection();
 
-	        conn.setConnectTimeout(5000);
-
-	        return "HTTP: " + conn.getResponseCode();
-
-	    } catch (Exception e) {
-	        return e.toString();
-	    }
+	@GetMapping("/stripe/init")
+	public ResponseEntity<Long> initStripe() {
+		stripeService.init();
+		return ResponseEntity.ok((long) 0);
 	}
-    @GetMapping("/stripe/init")
-    public ResponseEntity<Long>  initStripe() {
-    	stripeService.init();
-    	return ResponseEntity.ok((long)0);
-    }
 }
