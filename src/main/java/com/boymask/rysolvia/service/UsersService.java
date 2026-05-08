@@ -39,21 +39,33 @@ public class UsersService {
 		userRepository.save(user);
 
 	}
-@Transactional
+
+	@Transactional
 	public void addAbbonamento(String id, String abb) {
 		User uu = userRepository.findByUserId(id);
-		System.out.println(uu);
-		System.out.println("Abb "+abb);
+	
 		uu.setAbbonamento(abb);
-		
+
 		RysolviaProduct prod = ProductsPool.getProduct(abb);
-		int numToAdd =prod.getNumero_bollette();
-		System.out.println("prod="+abb+"  nm="+numToAdd);
+		int numToAdd = prod.getNumero_bollette();
+	
 		int currVal = uu.getBolletteTotali();
 		uu.setBolletteTotali(currVal + numToAdd);
 		userRepository.save(uu);
-		
+
 		statusService.updateIncasso(abb);
+
+	}
+	@Transactional
+	public void decBollette(String usr) {
+		User user = getUser(usr);
+		int currVal = user.getBolletteAnalizzate();
+		user.setBolletteAnalizzate(currVal + 1);
+	}
 	
+	@Transactional
+	public boolean hasBollette( String usr ) {
+		User user = getUser(usr);
+		return user.getBolletteTotali()-user.getBolletteAnalizzate() >0;
 	}
 }

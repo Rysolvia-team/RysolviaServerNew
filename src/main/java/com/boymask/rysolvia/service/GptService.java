@@ -28,19 +28,20 @@ public class GptService {
 	private String gptModel;
 	@Autowired
 	private StatusService statusService;
+	@Autowired
+	private UsersService usersService;
 
 	public ResponseEntity<String> analyzepdf(Map<String, Object> payload) {
 
 		try {
-
+			String user =  (String) payload.get("user");
 			List<String> pdf = (List<String>) payload.get("pdf");
-			for (String f : pdf)
-				System.out.println(f);
+
 
 			OpenAIUploader uploader = new OpenAIUploader(openaiSecretKey, this);
 
 			HttpResponse<String> response = uploader.uploadFilesSequentially(new ArrayList<>(pdf), 0,
-					new ArrayList<>());
+					new ArrayList<>(), user);
 
 			if (response == null) {
 
@@ -63,6 +64,7 @@ public class GptService {
 		System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
 		try {
 			String prompt = Prompt.PROMPT_ASK;
+			String user =  (String) payload.get("user");
 			List<String> images = (List<String>) payload.get("images");
 
 			JSONObject requestJson = initrequestJson();
@@ -100,7 +102,7 @@ public class GptService {
 
 			String body = response.body().string();
 
-			getTokens(new JSONObject(body));
+			getTokens(new JSONObject(body), user);
 
 			return ResponseEntity.ok(body);
 
@@ -118,9 +120,10 @@ public class GptService {
 		return requestJson;
 	}
 
-	public void getTokens(JSONObject jsonObject) throws JSONException {
+	public void getTokens(JSONObject jsonObject, String user) throws JSONException {
 		long tokens = JsonReader.getTokens(jsonObject);
 
 		statusService.updateTokens(tokens, true);
+		usersService.decBollette(user);
 	}
 }

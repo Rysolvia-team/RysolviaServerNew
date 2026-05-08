@@ -24,13 +24,13 @@ public class OpenAIUploader {
 		this.gptService=gptService;
 	}
 
-	public HttpResponse<String> uploadFilesSequentially(List<String> base64Files, int index, ArrayList<String> fileIds) {
+	public HttpResponse<String> uploadFilesSequentially(List<String> base64Files, int index, ArrayList<String> fileIds, String user) {
 
 		if (index >= base64Files.size()) {
 
 			System.out.println("Upload completato");
 
-			HttpResponse<String> ret = analyzeMultipleFiles(fileIds);
+			HttpResponse<String> ret = analyzeMultipleFiles(fileIds, user);
 System.out.println("FINITO ANALIZE");
 System.out.println(ret);
 			
@@ -84,7 +84,7 @@ System.out.println(ret);
 		}
 
 		// prossimo file
-		return uploadFilesSequentially(base64Files, index + 1, fileIds);
+		return uploadFilesSequentially(base64Files, index + 1, fileIds, user);
 	
 	}
 
@@ -120,7 +120,7 @@ System.out.println(ret);
 		return output.toByteArray();
 	}
 
-	private HttpResponse<String> analyzeMultipleFiles(ArrayList<String> fileIds) {
+	private HttpResponse<String> analyzeMultipleFiles(ArrayList<String> fileIds, String user) {
 
 		System.out.println("Analizzo file:");
 
@@ -165,7 +165,7 @@ System.out.println(ret);
 
 			System.out.println("RESPONSE: " + response.body());
 			
-			gptService.getTokens(new JSONObject(response.body()));
+			gptService.getTokens(new JSONObject(response.body()), user);
 			
 			return response;
 
