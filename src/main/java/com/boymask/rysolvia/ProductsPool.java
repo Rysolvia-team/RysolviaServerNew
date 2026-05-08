@@ -52,7 +52,7 @@ public class ProductsPool {
 		repo.save(p2);
 		
 		RysolviaProduct p3 = new RysolviaProduct();
-		p3.setName("Prd1");
+		p3.setName("Prd3");
 		p3.setNumero_bollette(15);
 		p3.setPrezzo(1500);
 		repo.save(p3);
