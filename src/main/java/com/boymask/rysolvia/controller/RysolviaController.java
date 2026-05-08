@@ -1,5 +1,7 @@
 package com.boymask.rysolvia.controller;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -80,7 +82,21 @@ public class RysolviaController {
 //    	statusService.updateTokens(bean.getToken(),bean.isIncBollette());
 //    	return ResponseEntity.ok((long)0);
 //    }
-    
+	@GetMapping("/test")
+	public String test() {
+	    try {
+	        URL url = new URL("https://stripe.com");
+	        HttpURLConnection conn =
+	            (HttpURLConnection) url.openConnection();
+
+	        conn.setConnectTimeout(5000);
+
+	        return "HTTP: " + conn.getResponseCode();
+
+	    } catch (Exception e) {
+	        return e.toString();
+	    }
+	}
     @GetMapping("/stripe/init")
     public ResponseEntity<Long>  initStripe() {
     	stripeService.init();
