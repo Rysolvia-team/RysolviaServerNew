@@ -9,14 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.boymask.rysolvia.ProductsPool;
-import com.boymask.rysolvia.controller.beans.UpdaterTokenBean;
-import com.boymask.rysolvia.service.StatusService;
 import com.boymask.rysolvia.service.StripeService;
+import com.stripe.exception.StripeException;
 import com.stripe.model.Price;
 import com.stripe.model.PriceCollection;
 import com.stripe.model.Product;
@@ -30,8 +27,6 @@ public class RysolviaController {
 	private String openaiSecretKey;
 
 	@Autowired
-	private StatusService statusService;
-	@Autowired
 	private StripeService stripeService;
 
 	@GetMapping("/hello")
@@ -40,34 +35,41 @@ public class RysolviaController {
 	}
 
 	@GetMapping("/products")
-	public List<Map<String, Object>> getProducts() throws Exception {
-
-		ProductListParams params = ProductListParams.builder().build();
-		ProductCollection products = Product.list(params);
-
+	public List<Map<String, Object>> getProducts() {
 		List<Map<String, Object>> result = new ArrayList<>();
+		try {
+			ProductListParams params = ProductListParams.builder().build();
+			ProductCollection products = Product.list(params);
 
-		for (Product p : products.getData()) {
+			
 
-			PriceListParams priceParams = PriceListParams.builder().setProduct(p.getId()).build();
+			for (Product p : products.getData()) {
 
-			PriceCollection prices = Price.list(priceParams);
+				PriceListParams priceParams = PriceListParams.builder().setProduct(p.getId()).build();
 
-			for (Price price : prices.getData()) {
-				
-				if( ProductsPool.getProduct(p.getName())==null)continue;
+				PriceCollection prices = Price.list(priceParams);
 
-				Map<String, Object> item = new HashMap<>();
-				item.put("id", p.getId());
-				item.put("name", p.getName());
-				item.put("description", p.getDescription());
-				item.put("price", price.getUnitAmount()); // in centesimi
-				item.put("currency", price.getCurrency());
+				for (Price price : prices.getData()) {
+					
+					if( ProductsPool.getProduct(p.getName())==null)continue;
 
-				result.add(item);
+					Map<String, Object> item = new HashMap<>();
+					item.put("id", p.getId());
+					item.put("name", p.getName());
+					item.put("description", p.getDescription());
+					item.put("price", price.getUnitAmount()); // in centesimi
+					item.put("currency", price.getCurrency());
+
+					result.add(item);
+				}
 			}
+
+			
+		} catch (StripeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		
 		}
-	
 		return result;
 	}
 	
