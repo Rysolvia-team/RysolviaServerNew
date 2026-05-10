@@ -18,10 +18,19 @@ public class SecurityConfig {
 
         http
             .csrf(csrf -> csrf.disable())
+            
+            
+//            http
+//            .csrf(csrf -> csrf.disable())
+//            .authorizeHttpRequests(auth -> auth
+//                .requestMatchers("/actuator/**").permitAll()
+//                .anyRequest().authenticated()
+//            )
 
             .authorizeHttpRequests(auth -> auth
                 // API Android → LIBERE
                 .requestMatchers("/api/**").permitAll()
+                .requestMatchers("/actuator/**").permitAll()
 
                 // WEB → protetto
                 .requestMatchers("/web/**").authenticated()
