@@ -60,7 +60,7 @@ public class GptService {
 		} catch (Exception e) {
 
 			e.printStackTrace();
-			logger.error(e.getMessage());
+			logger.error(e.getMessage(),e);
 			return ResponseEntity.status(500).body("analyzepdf. Errore server");
 		}
 
@@ -115,7 +115,7 @@ public class GptService {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.error(e.getMessage());
+			logger.error(e.getMessage(),e);
 			return ResponseEntity.status(500).body("Errore server");
 		}
 	}
