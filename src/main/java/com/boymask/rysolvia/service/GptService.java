@@ -54,7 +54,7 @@ public class GptService {
 
 			e.printStackTrace();
 
-			return ResponseEntity.status(500).body("Errore server");
+			return ResponseEntity.status(500).body("analyzepdf. Errore server");
 		}
 
 	}

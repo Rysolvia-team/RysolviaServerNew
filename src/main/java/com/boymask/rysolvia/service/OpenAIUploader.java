@@ -13,8 +13,11 @@ import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class OpenAIUploader {
+	Logger logger = LoggerFactory.getLogger(OpenAIUploader.class);
 
 	private String apiKey;
 	private GptService gptService;
@@ -31,8 +34,7 @@ public class OpenAIUploader {
 			System.out.println("Upload completato");
 
 			HttpResponse<String> ret = analyzeMultipleFiles(fileIds, user);
-System.out.println("FINITO ANALIZE");
-System.out.println(ret);
+logger.debug("FINITO ANALIZE");
 			
 			return ret;
 		}
@@ -71,11 +73,11 @@ System.out.println(ret);
 
 				fileIds.add(fileId);
 
-				System.out.println("Upload OK -> " + fileId);
+				logger.debug("Upload OK -> " + fileId);
 
 			} else {
 
-				System.out.println("Errore upload: " + response.statusCode());
+				logger.debug("Errore upload: " + response.statusCode());
 			}
 
 		} catch (Exception e) {
@@ -122,7 +124,7 @@ System.out.println(ret);
 
 	private HttpResponse<String> analyzeMultipleFiles(ArrayList<String> fileIds, String user) {
 
-		System.out.println("Analizzo file:");
+		logger.debug("Analizzo file:");
 
 		try {
 
@@ -161,9 +163,9 @@ System.out.println(ret);
 
 			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-			System.out.println("HTTP CODE: " + response.statusCode());
+			logger.debug("HTTP CODE: " + response.statusCode());
 
-			System.out.println("RESPONSE: " + response.body());
+			logger.debug("RESPONSE: " + response.body());
 			
 			gptService.getTokens(new JSONObject(response.body()), user);
 			
