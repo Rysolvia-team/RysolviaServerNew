@@ -9,10 +9,14 @@ import java.util.concurrent.TimeUnit;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import com.boymask.rysolvia.controller.UsersController;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -22,6 +26,9 @@ import okhttp3.Response;
 
 @Service
 public class GptService {
+	Logger logger
+    = LoggerFactory.getLogger(UsersController.class);
+	
 	@Value("${openai.secret.key}")
 	private String openaiSecretKey;
 	@Value("${gpt.model}")
@@ -53,7 +60,7 @@ public class GptService {
 		} catch (Exception e) {
 
 			e.printStackTrace();
-
+			logger.error(e.getMessage());
 			return ResponseEntity.status(500).body("analyzepdf. Errore server");
 		}
 
@@ -61,7 +68,7 @@ public class GptService {
 
 	public ResponseEntity<String> analyzeImages(
 			@org.springframework.web.bind.annotation.RequestBody Map<String, Object> payload) {
-		System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
+
 		try {
 			String prompt = Prompt.PROMPT_ASK;
 			String user =  (String) payload.get("user");
@@ -108,6 +115,7 @@ public class GptService {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			logger.error(e.getMessage());
 			return ResponseEntity.status(500).body("Errore server");
 		}
 	}
