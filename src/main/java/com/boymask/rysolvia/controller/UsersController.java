@@ -1,5 +1,7 @@
 package com.boymask.rysolvia.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +19,14 @@ import com.boymask.rysolvia.service.UsersService;
 public class UsersController {
 	@Autowired
 	UsersService usersService;
+	
+	Logger logger
+    = LoggerFactory.getLogger(UsersController.class);
 
 	@GetMapping("/get/{id}")
 	public User getUser(@PathVariable  String id) {
 		User user = usersService.getUser(id);
-
+logger.debug("user: "+ user.getId());
 		return user;
 	}
 	

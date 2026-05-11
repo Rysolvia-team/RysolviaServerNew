@@ -1,666 +1,223 @@
-2026-05-10T22:18:51.282+02:00  INFO 23819 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 23819 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:18:51.283+02:00 DEBUG 23819 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:18:51.284+02:00  INFO 23819 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:18:51.311+02:00  INFO 23819 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:18:51.311+02:00  INFO 23819 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:18:51.993+02:00  INFO 23819 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:18:52.037+02:00  INFO 23819 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:18:52.581+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:18:52.589+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:18:52.589+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:18:52.621+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:18:52.622+02:00  INFO 23819 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1310 ms
-2026-05-10T22:18:52.809+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:18:52.837+02:00  INFO 23819 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:18:52.855+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:18:52.991+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:18:53.005+02:00  INFO 23819 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:18:53.125+02:00  INFO 23819 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6d2e5ad1
-2026-05-10T22:18:53.126+02:00  INFO 23819 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:18:53.144+02:00  WARN 23819 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:18:53.663+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:18:53.701+02:00  INFO 23819 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:18:54.034+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:18:54.264+02:00  WARN 23819 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:18:54.714+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@b65240, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30d2d78c, org.springframework.security.web.context.SecurityContextHolderFilter@46048c4c, org.springframework.security.web.header.HeaderWriterFilter@c57d098, org.springframework.web.filter.CorsFilter@60700565, org.springframework.security.web.authentication.logout.LogoutFilter@2bd23a6a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6da89544, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a432353, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73718fb1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18d2369, org.springframework.security.web.access.ExceptionTranslationFilter@66920f13, org.springframework.security.web.access.intercept.AuthorizationFilter@59df05c0]
-2026-05-10T22:18:55.159+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T22:18:55.201+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T22:18:55.277+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T22:18:55.278+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:18:55.278+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:18:55.286+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:18:55.286+02:00  INFO 23819 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 81 ms
-2026-05-10T22:18:55.299+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2026-05-10T22:18:55.333+02:00  INFO 23819 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T22:18:55.345+02:00  INFO 23819 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.339 seconds (process running for 4.643)
-2026-05-10T22:18:55.641+02:00  INFO 23819 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T22:18:55.683+02:00  INFO 23819 --- [rysolvia] [http-nio-10000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T22:18:55.684+02:00  INFO 23819 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T22:18:55.684+02:00  INFO 23819 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-05-10T22:19:12.992+02:00  INFO 23819 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-10T22:19:12.993+02:00  INFO 23819 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-10T22:19:12.994+02:00  INFO 23819 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-05-10T22:19:29.905+02:00  WARN 23819 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/metrics.]
-2026-05-10T22:22:25.154+02:00  WARN 23819 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:24:00.986+02:00  INFO 23819 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:24:00.988+02:00  INFO 23819 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T22:24:00.991+02:00  INFO 23819 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T22:24:13.931+02:00  INFO 24373 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 24373 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:24:13.932+02:00 DEBUG 24373 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:24:13.933+02:00  INFO 24373 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:24:13.960+02:00  INFO 24373 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:24:13.960+02:00  INFO 24373 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:24:14.611+02:00  INFO 24373 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:24:14.648+02:00  INFO 24373 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:24:15.155+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:24:15.163+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:24:15.163+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:24:15.189+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:24:15.189+02:00  INFO 24373 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1229 ms
-2026-05-10T22:24:15.385+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:24:15.413+02:00  INFO 24373 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:24:15.431+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:24:15.554+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:24:15.569+02:00  INFO 24373 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:24:15.664+02:00  INFO 24373 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7205b99f
-2026-05-10T22:24:15.665+02:00  INFO 24373 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:24:15.682+02:00  WARN 24373 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:24:16.137+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:24:16.170+02:00  INFO 24373 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:24:16.489+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:24:16.724+02:00  WARN 24373 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:24:17.118+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@358d0c05, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50fc5bb4, org.springframework.security.web.context.SecurityContextHolderFilter@3fa22237, org.springframework.security.web.header.HeaderWriterFilter@33d6141f, org.springframework.web.filter.CorsFilter@38da7f75, org.springframework.security.web.authentication.logout.LogoutFilter@30841e39, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@629ca3ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@385c3ace, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f8c3ab6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e12c954, org.springframework.security.web.access.ExceptionTranslationFilter@1bd01b2d, org.springframework.security.web.access.intercept.AuthorizationFilter@2ab89b37]
-2026-05-10T22:24:17.565+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T22:24:17.605+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T22:24:17.663+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T22:24:17.664+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:24:17.664+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:24:17.675+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:24:17.675+02:00  INFO 24373 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 67 ms
-2026-05-10T22:24:17.690+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
-2026-05-10T22:24:17.726+02:00  INFO 24373 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T22:24:17.739+02:00  INFO 24373 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.069 seconds (process running for 4.314)
-2026-05-10T22:24:17.894+02:00  INFO 24373 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T22:24:17.919+02:00  INFO 24373 --- [rysolvia] [http-nio-10000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T22:24:17.919+02:00  INFO 24373 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T22:24:17.920+02:00  INFO 24373 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-05-10T22:24:22.454+02:00  INFO 24373 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-10T22:24:22.454+02:00  INFO 24373 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-10T22:24:22.457+02:00  INFO 24373 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-05-10T22:24:22.477+02:00  WARN 24373 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:24:24.552+02:00  WARN 24373 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:24:25.763+02:00  WARN 24373 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:24:27.009+02:00  WARN 24373 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:26:34.575+02:00  INFO 24373 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:26:34.577+02:00  INFO 24373 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T22:26:34.581+02:00  INFO 24373 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T22:26:41.038+02:00  INFO 24597 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 24597 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:26:41.039+02:00 DEBUG 24597 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:26:41.040+02:00  INFO 24597 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:26:41.070+02:00  INFO 24597 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:26:41.070+02:00  INFO 24597 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:26:41.728+02:00  INFO 24597 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:26:41.764+02:00  INFO 24597 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:26:42.300+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:26:42.309+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:26:42.310+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:26:42.335+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:26:42.335+02:00  INFO 24597 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1265 ms
-2026-05-10T22:26:42.535+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:26:42.565+02:00  INFO 24597 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:26:42.584+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:26:42.709+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:26:42.724+02:00  INFO 24597 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:26:42.828+02:00  INFO 24597 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@509684e4
-2026-05-10T22:26:42.829+02:00  INFO 24597 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:26:42.846+02:00  WARN 24597 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:26:43.318+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:26:43.347+02:00  INFO 24597 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:26:43.674+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:26:43.925+02:00  WARN 24597 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:26:44.329+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@263ee877, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29cec41f, org.springframework.security.web.context.SecurityContextHolderFilter@1c132324, org.springframework.security.web.header.HeaderWriterFilter@2c49fe7, org.springframework.web.filter.CorsFilter@551846b3, org.springframework.security.web.authentication.logout.LogoutFilter@34e2cfb4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3e8509a6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a83bf56, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53cbf9c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75b2b480, org.springframework.security.web.access.ExceptionTranslationFilter@16c101bb, org.springframework.security.web.access.intercept.AuthorizationFilter@1afb3908]
-2026-05-10T22:26:44.811+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T22:26:44.853+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T22:26:44.913+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T22:26:44.914+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:26:44.914+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:26:44.922+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:26:44.922+02:00  INFO 24597 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 66 ms
-2026-05-10T22:26:44.935+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
-2026-05-10T22:26:44.975+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T22:26:44.988+02:00  INFO 24597 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.209 seconds (process running for 4.487)
-2026-05-10T22:26:45.141+02:00  INFO 24597 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T22:26:45.152+02:00  INFO 24597 --- [rysolvia] [http-nio-10000-exec-2] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T22:26:45.152+02:00  INFO 24597 --- [rysolvia] [http-nio-10000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T22:26:45.153+02:00  INFO 24597 --- [rysolvia] [http-nio-10000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-05-10T22:26:49.963+02:00  INFO 24597 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-10T22:26:49.964+02:00  INFO 24597 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-10T22:26:49.966+02:00  INFO 24597 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-05-10T22:26:49.976+02:00  WARN 24597 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:28:06.458+02:00  INFO 24597 --- [rysolvia] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 37 class path changes (0 additions, 37 deletions, 0 modifications)
-2026-05-10T22:28:06.477+02:00  INFO 24597 --- [rysolvia] [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-05-10T22:28:06.479+02:00  INFO 24597 --- [rysolvia] [Thread-5] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Destroying Spring FrameworkServlet 'dispatcherServletRegistration'
-2026-05-10T22:28:06.498+02:00  INFO 24597 --- [rysolvia] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:28:06.503+02:00  INFO 24597 --- [rysolvia] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T22:28:06.510+02:00  INFO 24597 --- [rysolvia] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T22:29:43.008+02:00  INFO 24971 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 24971 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:29:43.009+02:00 DEBUG 24971 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:29:43.009+02:00  INFO 24971 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:29:43.041+02:00  INFO 24971 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:29:43.041+02:00  INFO 24971 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:29:43.365+02:00  INFO 24597 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 24597 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:29:43.365+02:00 DEBUG 24597 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:29:43.365+02:00  INFO 24597 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:29:43.624+02:00  INFO 24597 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:29:43.631+02:00  INFO 24597 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:29:43.743+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:29:43.744+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:29:43.744+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:29:43.750+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:29:43.750+02:00  INFO 24597 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 383 ms
-2026-05-10T22:29:43.825+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:29:43.827+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:29:43.829+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:29:43.830+02:00  INFO 24597 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2026-05-10T22:29:43.845+02:00  INFO 24597 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@4c0013c0
-2026-05-10T22:29:43.845+02:00  INFO 24597 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2026-05-10T22:29:43.848+02:00  WARN 24597 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:29:43.855+02:00  INFO 24971 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:29:43.901+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:29:43.908+02:00  INFO 24971 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:29:43.912+02:00  INFO 24597 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:29:44.058+02:00  WARN 24597 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:29:44.268+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64c8426c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@370c3b0b, org.springframework.security.web.context.SecurityContextHolderFilter@58f21802, org.springframework.security.web.header.HeaderWriterFilter@615dbd0f, org.springframework.web.filter.CorsFilter@7f775e40, org.springframework.security.web.authentication.logout.LogoutFilter@1769a5b4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5fed6bc9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d0369e1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57704b45, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3fec3795, org.springframework.security.web.access.ExceptionTranslationFilter@44f834e0, org.springframework.security.web.access.intercept.AuthorizationFilter@6aad6fa0]
-2026-05-10T22:29:44.445+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T22:29:44.459+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T22:29:44.494+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T22:29:44.495+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:29:44.495+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:29:44.502+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:29:44.502+02:00  INFO 24597 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 42 ms
-2026-05-10T22:29:44.515+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
-2026-05-10T22:29:44.534+02:00  INFO 24597 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T22:29:44.542+02:00  INFO 24597 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 1.197 seconds (process running for 184.042)
-2026-05-10T22:29:44.545+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:29:44.546+02:00  INFO 24597 --- [rysolvia] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2026-05-10T22:29:44.558+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:29:44.559+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:29:44.615+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:29:44.616+02:00  INFO 24971 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1575 ms
-2026-05-10T22:29:44.795+02:00  INFO 24597 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T22:29:44.812+02:00  INFO 24597 --- [rysolvia] [http-nio-10000-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T22:29:44.812+02:00  INFO 24597 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T22:29:44.812+02:00  INFO 24597 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-05-10T22:29:44.876+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:29:44.912+02:00  INFO 24971 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:29:44.932+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:29:45.053+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:29:45.069+02:00  INFO 24971 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:29:45.180+02:00  INFO 24971 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7205b99f
-2026-05-10T22:29:45.181+02:00  INFO 24971 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:29:45.198+02:00  WARN 24971 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:29:45.688+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:29:45.717+02:00  INFO 24971 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:29:46.045+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:29:46.282+02:00  WARN 24971 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:29:46.661+02:00  INFO 24971 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@50fc5bb4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38da7f75, org.springframework.security.web.context.SecurityContextHolderFilter@7c061ddb, org.springframework.security.web.header.HeaderWriterFilter@76a76181, org.springframework.web.filter.CorsFilter@1e12c954, org.springframework.security.web.authentication.logout.LogoutFilter@3da3e592, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@c93fdaa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@747800db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@765fefc3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@432203b7, org.springframework.security.web.access.ExceptionTranslationFilter@53dd34f5, org.springframework.security.web.access.intercept.AuthorizationFilter@32c61054]
-2026-05-10T22:29:47.069+02:00  WARN 24971 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2026-05-10T22:29:47.104+02:00  WARN 24971 --- [rysolvia] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2026-05-10T22:29:47.107+02:00  INFO 24971 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:29:47.109+02:00  INFO 24971 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T22:29:47.112+02:00  INFO 24971 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T22:29:47.126+02:00  INFO 24971 --- [rysolvia] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-05-10T22:29:47.137+02:00 ERROR 24971 --- [rysolvia] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2026-05-10T22:30:29.508+02:00  INFO 24597 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:30:29.508+02:00  INFO 24597 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2026-05-10T22:30:29.511+02:00  INFO 24597 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2026-05-10T22:30:37.175+02:00  INFO 25142 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 25142 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:30:37.176+02:00 DEBUG 25142 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:30:37.177+02:00  INFO 25142 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:30:37.204+02:00  INFO 25142 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:30:37.204+02:00  INFO 25142 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:30:37.875+02:00  INFO 25142 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:30:37.911+02:00  INFO 25142 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:30:38.417+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:30:38.425+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:30:38.426+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:30:38.459+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:30:38.459+02:00  INFO 25142 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1255 ms
-2026-05-10T22:30:38.644+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:30:38.671+02:00  INFO 25142 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:30:38.689+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:30:38.808+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:30:38.822+02:00  INFO 25142 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:30:38.916+02:00  INFO 25142 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7205b99f
-2026-05-10T22:30:38.917+02:00  INFO 25142 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:30:38.932+02:00  WARN 25142 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:30:39.429+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:30:39.456+02:00  INFO 25142 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:30:39.773+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:30:40.011+02:00  WARN 25142 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:30:40.402+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@367a7dd5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@104f103e, org.springframework.security.web.context.SecurityContextHolderFilter@285d6747, org.springframework.security.web.header.HeaderWriterFilter@fc95fa3, org.springframework.web.filter.CorsFilter@2d5167f5, org.springframework.security.web.authentication.logout.LogoutFilter@2095a7fc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ab89b37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c061ddb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@385c3ace, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@358d0c05, org.springframework.security.web.access.ExceptionTranslationFilter@354fb14b, org.springframework.security.web.access.intercept.AuthorizationFilter@1ca098cc]
-2026-05-10T22:30:40.850+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T22:30:40.891+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T22:30:40.950+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T22:30:40.951+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:30:40.951+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:30:40.960+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:30:40.960+02:00  INFO 25142 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 66 ms
-2026-05-10T22:30:40.973+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
-2026-05-10T22:30:41.012+02:00  INFO 25142 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T22:30:41.026+02:00  INFO 25142 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.101 seconds (process running for 4.343)
-2026-05-10T22:30:41.169+02:00  INFO 25142 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T22:30:41.183+02:00  INFO 25142 --- [rysolvia] [http-nio-10000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T22:30:41.183+02:00  INFO 25142 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T22:30:41.184+02:00  INFO 25142 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-05-10T22:30:53.238+02:00  INFO 25142 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-10T22:30:53.238+02:00  INFO 25142 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-10T22:30:53.239+02:00  INFO 25142 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-05-10T22:30:53.249+02:00  WARN 25142 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:30:54.445+02:00  WARN 25142 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:31:20.507+02:00  WARN 25142 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:33:08.035+02:00  INFO 25142 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:33:08.037+02:00  INFO 25142 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T22:33:08.040+02:00  INFO 25142 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T22:34:24.760+02:00  INFO 25632 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 25632 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:34:24.761+02:00 DEBUG 25632 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:34:24.761+02:00  INFO 25632 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:34:24.787+02:00  INFO 25632 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:34:24.788+02:00  INFO 25632 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:34:25.440+02:00  INFO 25632 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:34:25.482+02:00  INFO 25632 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:34:25.974+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:34:25.982+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:34:25.982+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:34:26.022+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:34:26.023+02:00  INFO 25632 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1234 ms
-2026-05-10T22:34:26.217+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:34:26.245+02:00  INFO 25632 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:34:26.264+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:34:26.386+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:34:26.401+02:00  INFO 25632 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:34:26.504+02:00  INFO 25632 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5062d75a
-2026-05-10T22:34:26.505+02:00  INFO 25632 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:34:26.522+02:00  WARN 25632 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:34:27.017+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:34:27.046+02:00  INFO 25632 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:34:27.387+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:34:27.623+02:00  WARN 25632 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:34:28.011+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@29cec41f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@551846b3, org.springframework.security.web.context.SecurityContextHolderFilter@e2128ef, org.springframework.security.web.header.HeaderWriterFilter@4c535c83, org.springframework.web.filter.CorsFilter@75b2b480, org.springframework.security.web.authentication.logout.LogoutFilter@72f5ca4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7d755407, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4de290b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46595e4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@241e9711, org.springframework.security.web.access.ExceptionTranslationFilter@385c3ace, org.springframework.security.web.access.intercept.AuthorizationFilter@122b0b6a]
-2026-05-10T22:34:28.446+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T22:34:28.486+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T22:34:28.544+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T22:34:28.544+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:34:28.545+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:34:28.553+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:34:28.553+02:00  INFO 25632 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 64 ms
-2026-05-10T22:34:28.565+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
-2026-05-10T22:34:28.594+02:00  INFO 25632 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T22:34:28.605+02:00  INFO 25632 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.146 seconds (process running for 4.388)
-2026-05-10T22:34:28.909+02:00  INFO 25632 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T22:34:28.934+02:00  INFO 25632 --- [rysolvia] [http-nio-10000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T22:34:28.934+02:00  INFO 25632 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T22:34:28.934+02:00  INFO 25632 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-05-10T22:34:33.223+02:00  INFO 25632 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-10T22:34:33.224+02:00  INFO 25632 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-10T22:34:33.228+02:00  INFO 25632 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-05-10T22:34:33.250+02:00  WARN 25632 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:34:34.536+02:00  WARN 25632 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:35:48.884+02:00  INFO 25632 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:35:48.886+02:00  INFO 25632 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T22:35:48.889+02:00  INFO 25632 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T22:37:02.961+02:00  INFO 26032 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 26032 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:37:02.963+02:00 DEBUG 26032 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:37:02.963+02:00  INFO 26032 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:37:02.998+02:00  INFO 26032 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:37:02.998+02:00  INFO 26032 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:37:03.651+02:00  INFO 26032 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:37:03.690+02:00  INFO 26032 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:37:04.191+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:37:04.200+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:37:04.200+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:37:04.239+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:37:04.239+02:00  INFO 26032 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1240 ms
-2026-05-10T22:37:04.442+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:37:04.470+02:00  INFO 26032 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:37:04.488+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:37:04.610+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:37:04.624+02:00  INFO 26032 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:37:04.727+02:00  INFO 26032 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b4992bf
-2026-05-10T22:37:04.728+02:00  INFO 26032 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:37:04.745+02:00  WARN 26032 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:37:05.236+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:37:05.272+02:00  INFO 26032 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:37:05.632+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:37:05.877+02:00  WARN 26032 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:37:06.253+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4a9ccdc7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cc2250b, org.springframework.security.web.context.SecurityContextHolderFilter@2c49fe7, org.springframework.security.web.header.HeaderWriterFilter@16c101bb, org.springframework.web.filter.CorsFilter@bc097f8, org.springframework.security.web.authentication.logout.LogoutFilter@14fba2d4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@38da7f75, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b232061, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c132324, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47477da8, org.springframework.security.web.access.ExceptionTranslationFilter@2ba8e8c1, org.springframework.security.web.access.intercept.AuthorizationFilter@2d5167f5]
-2026-05-10T22:37:06.675+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T22:37:06.714+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T22:37:06.772+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T22:37:06.773+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:37:06.773+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:37:06.781+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:37:06.781+02:00  INFO 26032 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 64 ms
-2026-05-10T22:37:06.794+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
-2026-05-10T22:37:06.822+02:00  INFO 26032 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T22:37:06.832+02:00  INFO 26032 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.138 seconds (process running for 4.382)
-2026-05-10T22:37:07.152+02:00  INFO 26032 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T22:37:07.174+02:00  INFO 26032 --- [rysolvia] [http-nio-10000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T22:37:07.175+02:00  INFO 26032 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T22:37:07.175+02:00  INFO 26032 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-05-10T22:37:12.445+02:00  INFO 26032 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-10T22:37:12.446+02:00  INFO 26032 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-10T22:37:12.451+02:00  INFO 26032 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2026-05-10T22:37:12.485+02:00  WARN 26032 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:37:13.844+02:00  WARN 26032 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:37:16.875+02:00  WARN 26032 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:37:24.096+02:00  WARN 26032 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:39:36.898+02:00  WARN 26032 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=rysolvia, managementUrl=http://0.0.0.0:10000/actuator, healthUrl=http://0.0.0.0:10000/actuator/health, serviceUrl=http://0.0.0.0:8080/) at spring-boot-admin ([http://localhost:9090/instances]): I/O error on POST request for "http://localhost:9090/instances": Failed to connect to localhost/127.0.0.1:9090. Further attempts are logged on DEBUG level
-2026-05-10T22:39:49.299+02:00  WARN 26032 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:39:50.664+02:00  WARN 26032 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:41:34.509+02:00  INFO 26032 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:41:34.511+02:00  INFO 26032 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T22:41:34.514+02:00  INFO 26032 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T22:42:43.876+02:00  INFO 26698 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 26698 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:42:43.876+02:00 DEBUG 26698 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:42:43.877+02:00  INFO 26698 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:42:43.905+02:00  INFO 26698 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:42:43.905+02:00  INFO 26698 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:42:44.560+02:00  INFO 26698 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:42:44.595+02:00  INFO 26698 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:42:45.128+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:42:45.136+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:42:45.136+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:42:45.168+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:42:45.169+02:00  INFO 26698 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1263 ms
-2026-05-10T22:42:45.359+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:42:45.387+02:00  INFO 26698 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:42:45.404+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:42:45.523+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:42:45.537+02:00  INFO 26698 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:42:45.629+02:00  INFO 26698 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@55d6e344
-2026-05-10T22:42:45.630+02:00  INFO 26698 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:42:45.647+02:00  WARN 26698 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:42:46.129+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:42:46.160+02:00  INFO 26698 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:42:46.490+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:42:46.725+02:00  WARN 26698 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:42:47.141+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@104f103e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d5167f5, org.springframework.security.web.context.SecurityContextHolderFilter@65bba0a4, org.springframework.security.web.header.HeaderWriterFilter@3589b833, org.springframework.web.filter.CorsFilter@358d0c05, org.springframework.security.web.authentication.logout.LogoutFilter@4b1245dd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@32c61054, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44003c7f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@747800db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50fc5bb4, org.springframework.security.web.access.ExceptionTranslationFilter@6e496adc, org.springframework.security.web.access.intercept.AuthorizationFilter@6a0cb8eb]
-2026-05-10T22:42:47.592+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T22:42:47.631+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T22:42:47.687+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T22:42:47.688+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:42:47.688+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:42:47.696+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:42:47.697+02:00  INFO 26698 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 63 ms
-2026-05-10T22:42:47.709+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
-2026-05-10T22:42:47.737+02:00  INFO 26698 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T22:42:47.749+02:00  INFO 26698 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.145 seconds (process running for 4.396)
-2026-05-10T22:42:48.105+02:00  INFO 26698 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T22:42:48.145+02:00  INFO 26698 --- [rysolvia] [http-nio-10000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T22:42:48.145+02:00  INFO 26698 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T22:42:48.146+02:00  INFO 26698 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-05-10T22:42:50.878+02:00  INFO 26698 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-10T22:42:50.879+02:00  INFO 26698 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-10T22:42:50.883+02:00  INFO 26698 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-05-10T22:42:50.916+02:00  WARN 26698 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:42:52.557+02:00  WARN 26698 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/logfile.]
-2026-05-10T22:43:08.988+02:00  WARN 26698 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:43:59.476+02:00  WARN 26698 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource app.log.]
-2026-05-10T22:44:32.759+02:00  WARN 26698 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:45:26.495+02:00  INFO 26698 --- [rysolvia] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 37 class path changes (0 additions, 37 deletions, 0 modifications)
-2026-05-10T22:45:26.514+02:00  INFO 26698 --- [rysolvia] [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-05-10T22:45:26.516+02:00  INFO 26698 --- [rysolvia] [Thread-5] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Destroying Spring FrameworkServlet 'dispatcherServletRegistration'
-2026-05-10T22:45:26.528+02:00  INFO 26698 --- [rysolvia] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:45:26.531+02:00  INFO 26698 --- [rysolvia] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T22:45:26.536+02:00  INFO 26698 --- [rysolvia] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T22:49:02.874+02:00  INFO 27320 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 27320 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:49:02.876+02:00 DEBUG 27320 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:49:02.876+02:00  INFO 27320 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:49:02.906+02:00  INFO 27320 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:49:02.906+02:00  INFO 27320 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:49:03.341+02:00  WARN 27320 --- [rysolvia] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'filterChain' defined in class path resource [com/boymask/rysolvia/SecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=securityConfig; factoryMethodName=filterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/boymask/rysolvia/SecurityConfig.class]] for bean 'filterChain' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=globalExceptionHandler; factoryMethodName=filterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/boymask/rysolvia/GlobalExceptionHandler.class]] bound.
-2026-05-10T22:49:03.350+02:00  INFO 27320 --- [rysolvia] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-05-10T22:49:03.363+02:00 ERROR 27320 --- [rysolvia] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-The bean 'filterChain', defined in class path resource [com/boymask/rysolvia/SecurityConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/boymask/rysolvia/GlobalExceptionHandler.class] and overriding is disabled.
-
-Action:
-
-Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
-
-2026-05-10T22:51:20.799+02:00  INFO 27517 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 27517 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:51:20.800+02:00 DEBUG 27517 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:51:20.800+02:00  INFO 27517 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:51:20.827+02:00  INFO 27517 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:51:20.827+02:00  INFO 27517 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:51:21.461+02:00  INFO 27517 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:51:21.501+02:00  INFO 27517 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:51:22.022+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:51:22.033+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:51:22.034+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:51:22.078+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:51:22.079+02:00  INFO 27517 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1251 ms
-2026-05-10T22:51:22.283+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:51:22.311+02:00  INFO 27517 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:51:22.329+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:51:22.448+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:51:22.462+02:00  INFO 27517 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:51:22.559+02:00  INFO 27517 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@19fded82
-2026-05-10T22:51:22.560+02:00  INFO 27517 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:51:22.576+02:00  WARN 27517 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:51:23.051+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:51:23.076+02:00  INFO 27517 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:51:23.410+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:51:23.657+02:00  WARN 27517 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:51:24.012+02:00  WARN 27517 --- [rysolvia] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/boymask/rysolvia/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception with message: Can't configure mvcMatchers after anyRequest
-2026-05-10T22:51:24.013+02:00  INFO 27517 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:51:24.016+02:00  INFO 27517 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T22:51:24.019+02:00  INFO 27517 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T22:51:24.022+02:00  INFO 27517 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-05-10T22:51:24.039+02:00  INFO 27517 --- [rysolvia] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-05-10T22:51:24.053+02:00 ERROR 27517 --- [rysolvia] [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/boymask/rysolvia/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception with message: Can't configure mvcMatchers after anyRequest
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
-	at com.boymask.rysolvia.RysolviaApplication.main(RysolviaApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception with message: Can't configure mvcMatchers after anyRequest
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644) ~[spring-beans-6.1.6.jar:6.1.6]
-	... 22 common frames omitted
-Caused by: java.lang.IllegalStateException: Can't configure mvcMatchers after anyRequest
-	at org.springframework.util.Assert.state(Assert.java:76) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry.createMvcMatchers(AbstractRequestMatcherRegistry.java:112) ~[spring-security-config-6.2.4.jar:6.2.4]
-	at org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry.requestMatchers(AbstractRequestMatcherRegistry.java:210) ~[spring-security-config-6.2.4.jar:6.2.4]
-	at org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry.requestMatchers(AbstractRequestMatcherRegistry.java:368) ~[spring-security-config-6.2.4.jar:6.2.4]
-	at com.boymask.rysolvia.SecurityConfig.lambda$2(SecurityConfig.java:32) ~[classes/:na]
-	at org.springframework.security.config.annotation.web.builders.HttpSecurity.authorizeHttpRequests(HttpSecurity.java:1467) ~[spring-security-config-6.2.4.jar:6.2.4]
-	at com.boymask.rysolvia.SecurityConfig.filterChain(SecurityConfig.java:30) ~[classes/:na]
-	at com.boymask.rysolvia.SecurityConfig$$SpringCGLIB$$0.CGLIB$filterChain$0(<generated>) ~[classes/:na]
-	at com.boymask.rysolvia.SecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>) ~[classes/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-6.1.6.jar:6.1.6]
-	at com.boymask.rysolvia.SecurityConfig$$SpringCGLIB$$0.filterChain(<generated>) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140) ~[spring-beans-6.1.6.jar:6.1.6]
-	... 23 common frames omitted
-
-2026-05-10T22:52:41.978+02:00  INFO 27661 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 27661 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T22:52:41.979+02:00 DEBUG 27661 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T22:52:41.980+02:00  INFO 27661 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T22:52:42.017+02:00  INFO 27661 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T22:52:42.017+02:00  INFO 27661 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T22:52:42.677+02:00  INFO 27661 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T22:52:42.712+02:00  INFO 27661 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
-2026-05-10T22:52:43.219+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T22:52:43.227+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:52:43.227+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:52:43.264+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:52:43.265+02:00  INFO 27661 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1248 ms
-2026-05-10T22:52:43.454+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T22:52:43.483+02:00  INFO 27661 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T22:52:43.501+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T22:52:43.622+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T22:52:43.636+02:00  INFO 27661 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T22:52:43.731+02:00  INFO 27661 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5062d75a
-2026-05-10T22:52:43.732+02:00  INFO 27661 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T22:52:43.749+02:00  WARN 27661 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T22:52:44.246+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T22:52:44.275+02:00  INFO 27661 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T22:52:44.593+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T22:52:44.831+02:00  WARN 27661 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T22:52:45.245+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1afb3908, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@122b0b6a, org.springframework.security.web.context.SecurityContextHolderFilter@31de29ef, org.springframework.security.web.header.HeaderWriterFilter@53a03662, org.springframework.web.filter.CorsFilter@41c79d23, org.springframework.security.web.authentication.logout.LogoutFilter@22f2b149, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@104f103e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c49fe7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2dbea996, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e8509a6, org.springframework.security.web.access.ExceptionTranslationFilter@7e7b7c21, org.springframework.security.web.access.intercept.AuthorizationFilter@2293e604]
-2026-05-10T22:52:45.700+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T22:52:45.741+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T22:52:45.804+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T22:52:45.805+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T22:52:45.805+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T22:52:45.814+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T22:52:45.814+02:00  INFO 27661 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 70 ms
-2026-05-10T22:52:45.829+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
-2026-05-10T22:52:45.869+02:00  INFO 27661 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T22:52:45.880+02:00  INFO 27661 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.167 seconds (process running for 4.408)
-2026-05-10T22:52:46.023+02:00  INFO 27661 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T22:52:46.037+02:00  INFO 27661 --- [rysolvia] [http-nio-10000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T22:52:46.037+02:00  INFO 27661 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T22:52:46.037+02:00  INFO 27661 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-05-10T22:52:49.747+02:00  INFO 27661 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-10T22:52:49.748+02:00  INFO 27661 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-10T22:52:49.752+02:00  INFO 27661 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-05-10T22:52:49.780+02:00  WARN 27661 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:52:50.992+02:00  WARN 27661 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator.]
-2026-05-10T22:55:24.087+02:00  WARN 27661 --- [rysolvia] [http-nio-10000-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
-2026-05-10T22:55:32.859+02:00  WARN 27661 --- [rysolvia] [http-nio-10000-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
-2026-05-10T23:07:20.847+02:00  INFO 27661 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T23:07:20.849+02:00  INFO 27661 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T23:07:20.852+02:00  INFO 27661 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T23:07:53.969+02:00  INFO 28862 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 28862 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T23:07:53.970+02:00 DEBUG 28862 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T23:07:53.971+02:00  INFO 28862 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T23:07:54.006+02:00  INFO 28862 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T23:07:54.006+02:00  INFO 28862 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T23:07:54.710+02:00  INFO 28862 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T23:07:54.749+02:00  INFO 28862 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 3 JPA repository interfaces.
-2026-05-10T23:07:55.318+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T23:07:55.326+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T23:07:55.327+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T23:07:55.359+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T23:07:55.359+02:00  INFO 28862 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1353 ms
-2026-05-10T23:07:55.549+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T23:07:55.578+02:00  INFO 28862 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T23:07:55.596+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T23:07:55.730+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T23:07:55.748+02:00  INFO 28862 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T23:07:55.850+02:00  INFO 28862 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5946a3ea
-2026-05-10T23:07:55.850+02:00  INFO 28862 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T23:07:55.866+02:00  WARN 28862 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T23:07:56.335+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T23:07:56.367+02:00  INFO 28862 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T23:07:56.700+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T23:07:56.932+02:00  WARN 28862 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T23:07:57.379+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4c787c34, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36b6c548, org.springframework.security.web.context.SecurityContextHolderFilter@c57d098, org.springframework.security.web.header.HeaderWriterFilter@66920f13, org.springframework.web.filter.CorsFilter@52257eb7, org.springframework.security.web.authentication.logout.LogoutFilter@1e7c3174, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@126985ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33f50d58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46048c4c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b8ed302, org.springframework.security.web.access.ExceptionTranslationFilter@1c1000c7, org.springframework.security.web.access.intercept.AuthorizationFilter@b3ca4d]
-2026-05-10T23:07:57.815+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T23:07:57.858+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T23:07:57.915+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T23:07:57.916+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T23:07:57.916+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T23:07:57.925+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T23:07:57.926+02:00  INFO 28862 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 65 ms
-2026-05-10T23:07:57.942+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2026-05-10T23:07:57.977+02:00  INFO 28862 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T23:07:57.989+02:00  INFO 28862 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.284 seconds (process running for 4.54)
-2026-05-10T23:07:58.342+02:00  INFO 28862 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
-2026-05-10T23:07:58.372+02:00  INFO 28862 --- [rysolvia] [http-nio-10000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServletRegistration'
-2026-05-10T23:07:58.373+02:00  INFO 28862 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServletRegistration'
-2026-05-10T23:07:58.373+02:00  INFO 28862 --- [rysolvia] [http-nio-10000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-05-10T23:08:09.034+02:00  WARN 28862 --- [rysolvia] [http-nio-10000-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
-2026-05-10T23:21:08.055+02:00  WARN 28862 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=rysolvia, managementUrl=http://0.0.0.0:10000/actuator, healthUrl=http://0.0.0.0:10000/actuator/health, serviceUrl=http://0.0.0.0:8080/) at spring-boot-admin ([http://localhost:9090/instances]): I/O error on POST request for "http://localhost:9090/instances": Failed to connect to localhost/127.0.0.1:9090. Further attempts are logged on DEBUG level
-2026-05-10T23:21:09.335+02:00  INFO 28862 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T23:21:09.337+02:00  INFO 28862 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-10T23:21:09.340+02:00  INFO 28862 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-10T23:23:09.532+02:00  INFO 30357 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 30357 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
-2026-05-10T23:23:09.533+02:00 DEBUG 30357 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2026-05-10T23:23:09.534+02:00  INFO 30357 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-05-10T23:23:09.565+02:00  INFO 30357 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-05-10T23:23:09.565+02:00  INFO 30357 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-05-10T23:23:10.254+02:00  INFO 30357 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-10T23:23:10.290+02:00  INFO 30357 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
-2026-05-10T23:23:10.793+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-05-10T23:23:10.802+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T23:23:10.802+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T23:23:10.842+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-10T23:23:10.842+02:00  INFO 30357 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1277 ms
-2026-05-10T23:23:11.047+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-10T23:23:11.075+02:00  INFO 30357 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-10T23:23:11.094+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-10T23:23:11.215+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-10T23:23:11.229+02:00  INFO 30357 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-10T23:23:11.334+02:00  INFO 30357 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@19307b8a
-2026-05-10T23:23:11.335+02:00  INFO 30357 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-10T23:23:11.352+02:00  WARN 30357 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-10T23:23:11.823+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-10T23:23:11.848+02:00  INFO 30357 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-10T23:23:12.200+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-10T23:23:12.428+02:00  WARN 30357 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-10T23:23:12.898+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58782326, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40643ff6, org.springframework.security.web.context.SecurityContextHolderFilter@63bfde55, org.springframework.security.web.header.HeaderWriterFilter@6d53ee33, org.springframework.web.filter.CorsFilter@39028f39, org.springframework.security.web.authentication.logout.LogoutFilter@3fb11e2d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f576e6f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f1f6365, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@568bbb92, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@337b7568, org.springframework.security.web.access.ExceptionTranslationFilter@73718fb1, org.springframework.security.web.access.intercept.AuthorizationFilter@4f69d305]
-2026-05-10T23:23:13.346+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-05-10T23:23:13.388+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2026-05-10T23:23:13.450+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
-2026-05-10T23:23:13.451+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-10T23:23:13.451+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-10T23:23:13.460+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-05-10T23:23:13.460+02:00  INFO 30357 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 69 ms
-2026-05-10T23:23:13.475+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2026-05-10T23:23:13.511+02:00  INFO 30357 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
-2026-05-10T23:23:13.523+02:00  INFO 30357 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.26 seconds (process running for 4.531)
-2026-05-10T23:23:14.152+02:00  WARN 30357 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=rysolvia, managementUrl=http://0.0.0.0:10000/actuator, healthUrl=http://0.0.0.0:10000/actuator/health, serviceUrl=http://0.0.0.0:8080/) at spring-boot-admin ([https://admin.onrender.com/instances]): 503 : "<!DOCTYPE html><EOL><html lang="en"><EOL><head><EOL>    <meta charset="UTF-8"><EOL>    <meta name="viewport" content="width=device-width, initial-scale=1" /><EOL>    <title>Service Suspended</title><EOL></head><EOL><body><EOL>This service has been suspended by its owner.<EOL></body><EOL></html><EOL>". Further attempts are logged on DEBUG level
-2026-05-10T23:23:29.395+02:00  INFO 30357 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-10T23:23:29.395+02:00  INFO 30357 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-10T23:23:29.396+02:00  INFO 30357 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-05-11T00:20:41.073+02:00  WARN 30357 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/health.]
+2026-05-11T00:22:10.305+02:00  INFO 30357 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T00:22:10.308+02:00  INFO 30357 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-11T00:22:10.313+02:00  INFO 30357 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-11T09:40:33.593+02:00  INFO 7624 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 7624 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
+2026-05-11T09:40:33.594+02:00 DEBUG 7624 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-05-11T09:40:33.595+02:00  INFO 7624 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-11T09:40:33.627+02:00  INFO 7624 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-11T09:40:33.627+02:00  INFO 7624 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-11T09:40:34.361+02:00  INFO 7624 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-11T09:40:34.401+02:00  INFO 7624 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 3 JPA repository interfaces.
+2026-05-11T09:40:34.938+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-11T09:40:34.946+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T09:40:34.947+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T09:40:34.986+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-11T09:40:34.987+02:00  INFO 7624 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1360 ms
+2026-05-11T09:40:35.208+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-11T09:40:35.253+02:00  INFO 7624 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-11T09:40:35.279+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-11T09:40:35.436+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-11T09:40:35.454+02:00  INFO 7624 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-11T09:40:35.571+02:00  INFO 7624 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@207054c8
+2026-05-11T09:40:35.572+02:00  INFO 7624 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-11T09:40:35.603+02:00  WARN 7624 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-11T09:40:36.205+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-11T09:40:36.273+02:00  INFO 7624 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T09:40:36.676+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-11T09:40:36.919+02:00  WARN 7624 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-11T09:40:37.373+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3f576e6f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ea7637b, org.springframework.security.web.context.SecurityContextHolderFilter@741ed5b4, org.springframework.security.web.header.HeaderWriterFilter@364497fc, org.springframework.web.filter.CorsFilter@1e25152e, org.springframework.security.web.authentication.logout.LogoutFilter@41abe42b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@15538a02, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fcc0a12, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@cccd944, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a874671, org.springframework.security.web.access.ExceptionTranslationFilter@61402d48, org.springframework.security.web.access.intercept.AuthorizationFilter@60700565]
+2026-05-11T09:40:37.817+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-11T09:40:37.858+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-11T09:40:37.919+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
+2026-05-11T09:40:37.920+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T09:40:37.920+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T09:40:37.928+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-05-11T09:40:37.928+02:00  INFO 7624 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 66 ms
+2026-05-11T09:40:37.941+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2026-05-11T09:40:37.976+02:00  INFO 7624 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
+2026-05-11T09:40:37.987+02:00  INFO 7624 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.695 seconds (process running for 4.962)
+2026-05-11T09:40:38.668+02:00  INFO 7624 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
+2026-05-11T09:54:11.852+02:00  INFO 7624 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T09:54:11.855+02:00  INFO 7624 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-11T09:54:11.859+02:00  INFO 7624 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-11T09:56:03.013+02:00  INFO 11938 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 11938 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
+2026-05-11T09:56:03.014+02:00 DEBUG 11938 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-05-11T09:56:03.014+02:00  INFO 11938 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-11T09:56:03.042+02:00  INFO 11938 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-11T09:56:03.042+02:00  INFO 11938 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-11T09:56:03.694+02:00  INFO 11938 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-11T09:56:03.734+02:00  INFO 11938 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 3 JPA repository interfaces.
+2026-05-11T09:56:04.251+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-11T09:56:04.259+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T09:56:04.259+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T09:56:04.293+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-11T09:56:04.293+02:00  INFO 11938 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1251 ms
+2026-05-11T09:56:04.486+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-11T09:56:04.515+02:00  INFO 11938 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-11T09:56:04.534+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-11T09:56:04.654+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-11T09:56:04.668+02:00  INFO 11938 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-11T09:56:04.766+02:00  INFO 11938 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@472084da
+2026-05-11T09:56:04.767+02:00  INFO 11938 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-11T09:56:04.785+02:00  WARN 11938 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-11T09:56:05.291+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-11T09:56:05.326+02:00  INFO 11938 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T09:56:05.653+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-11T09:56:05.909+02:00  WARN 11938 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-11T09:56:06.451+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66af350a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e17cc82, org.springframework.security.web.context.SecurityContextHolderFilter@1e7c3174, org.springframework.security.web.header.HeaderWriterFilter@cccd944, org.springframework.web.filter.CorsFilter@3c2fd6f3, org.springframework.security.web.authentication.logout.LogoutFilter@63d32ce7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5d248764, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c0828cc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2bd23a6a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f55e035, org.springframework.security.web.access.ExceptionTranslationFilter@741ed5b4, org.springframework.security.web.access.intercept.AuthorizationFilter@6a874671]
+2026-05-11T09:56:06.887+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-11T09:56:06.926+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-11T09:56:06.984+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
+2026-05-11T09:56:06.985+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T09:56:06.985+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T09:56:06.994+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-05-11T09:56:06.994+02:00  INFO 11938 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 65 ms
+2026-05-11T09:56:07.008+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2026-05-11T09:56:07.041+02:00  INFO 11938 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
+2026-05-11T09:56:07.052+02:00  INFO 11938 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.324 seconds (process running for 4.57)
+2026-05-11T09:56:07.711+02:00  INFO 11938 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
+2026-05-11T09:58:04.098+02:00  INFO 11938 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-11T09:58:04.099+02:00  INFO 11938 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-11T09:58:04.100+02:00  INFO 11938 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-05-11T09:58:04.197+02:00 DEBUG 11938 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] c.b.rysolvia.controller.UsersController  : user: 2
+2026-05-11T10:03:26.816+02:00  INFO 11938 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T10:03:26.818+02:00  INFO 11938 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-11T10:03:26.821+02:00  INFO 11938 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-11T10:03:31.662+02:00  INFO 13834 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 13834 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
+2026-05-11T10:03:31.663+02:00 DEBUG 13834 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-05-11T10:03:31.663+02:00  INFO 13834 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-11T10:03:31.689+02:00  INFO 13834 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-11T10:03:31.689+02:00  INFO 13834 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-11T10:03:32.375+02:00  INFO 13834 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-11T10:03:32.411+02:00  INFO 13834 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
+2026-05-11T10:03:32.918+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-11T10:03:32.927+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T10:03:32.928+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T10:03:32.961+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-11T10:03:32.961+02:00  INFO 13834 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1272 ms
+2026-05-11T10:03:33.166+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-11T10:03:33.195+02:00  INFO 13834 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-11T10:03:33.214+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-11T10:03:33.337+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-11T10:03:33.353+02:00  INFO 13834 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-11T10:03:33.463+02:00  INFO 13834 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c3c20b4
+2026-05-11T10:03:33.464+02:00  INFO 13834 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-11T10:03:33.483+02:00  WARN 13834 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-11T10:03:33.981+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-11T10:03:34.013+02:00  INFO 13834 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T10:03:34.351+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-11T10:03:34.594+02:00  WARN 13834 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-11T10:03:35.054+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@18d2369, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@339b454a, org.springframework.security.web.context.SecurityContextHolderFilter@7847a6fb, org.springframework.security.web.header.HeaderWriterFilter@194dee2, org.springframework.web.filter.CorsFilter@15538a02, org.springframework.security.web.authentication.logout.LogoutFilter@46a4de02, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@52257eb7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73718fb1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@679fd975, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75e8fee0, org.springframework.security.web.access.ExceptionTranslationFilter@67878f63, org.springframework.security.web.access.intercept.AuthorizationFilter@6da89544]
+2026-05-11T10:03:35.493+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-11T10:03:35.536+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-11T10:03:35.602+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
+2026-05-11T10:03:35.603+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T10:03:35.603+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T10:03:35.611+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-05-11T10:03:35.611+02:00  INFO 13834 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 72 ms
+2026-05-11T10:03:35.624+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2026-05-11T10:03:35.659+02:00  INFO 13834 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
+2026-05-11T10:03:35.670+02:00  INFO 13834 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.283 seconds (process running for 4.528)
+2026-05-11T10:03:36.420+02:00  INFO 13834 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
+2026-05-11T10:04:23.604+02:00  INFO 13834 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-11T10:04:23.604+02:00  INFO 13834 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-11T10:04:23.607+02:00  INFO 13834 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-05-11T10:04:23.708+02:00 DEBUG 13834 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] c.b.rysolvia.controller.UsersController  : user: 2
+2026-05-11T10:06:32.357+02:00  INFO 13834 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T10:06:32.359+02:00  INFO 13834 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-11T10:06:32.362+02:00  INFO 13834 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-11T10:06:37.182+02:00  INFO 14480 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 14480 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
+2026-05-11T10:06:37.183+02:00 DEBUG 14480 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-05-11T10:06:37.184+02:00  INFO 14480 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-11T10:06:37.212+02:00  INFO 14480 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-11T10:06:37.212+02:00  INFO 14480 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-11T10:06:37.920+02:00  INFO 14480 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-11T10:06:37.956+02:00  INFO 14480 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
+2026-05-11T10:06:38.478+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-11T10:06:38.487+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T10:06:38.487+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T10:06:38.525+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-11T10:06:38.525+02:00  INFO 14480 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1313 ms
+2026-05-11T10:06:38.720+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-11T10:06:38.749+02:00  INFO 14480 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-11T10:06:38.769+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-11T10:06:38.891+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-11T10:06:38.913+02:00  INFO 14480 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-11T10:06:39.026+02:00  INFO 14480 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3fdaae13
+2026-05-11T10:06:39.027+02:00  INFO 14480 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-11T10:06:39.045+02:00  WARN 14480 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-11T10:06:39.530+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-11T10:06:39.558+02:00  INFO 14480 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T10:06:39.910+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-11T10:06:40.154+02:00  WARN 14480 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-11T10:06:40.593+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@72bf3175, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d6af3b7, org.springframework.security.web.context.SecurityContextHolderFilter@7a98dfb3, org.springframework.security.web.header.HeaderWriterFilter@38794a90, org.springframework.web.filter.CorsFilter@4eb9a89c, org.springframework.security.web.authentication.logout.LogoutFilter@25a8387f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@77ff8734, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b571f49, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22c2a42f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@299ea644, org.springframework.security.web.access.ExceptionTranslationFilter@76165d3d, org.springframework.security.web.access.intercept.AuthorizationFilter@51cc470b]
+2026-05-11T10:06:41.008+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-11T10:06:41.051+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-11T10:06:41.116+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
+2026-05-11T10:06:41.117+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T10:06:41.117+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T10:06:41.125+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-05-11T10:06:41.125+02:00  INFO 14480 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 69 ms
+2026-05-11T10:06:41.136+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2026-05-11T10:06:41.169+02:00  INFO 14480 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
+2026-05-11T10:06:41.180+02:00  INFO 14480 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.263 seconds (process running for 4.526)
+2026-05-11T10:06:41.784+02:00  INFO 14480 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
+2026-05-11T10:07:25.675+02:00  INFO 14480 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-11T10:07:25.675+02:00  INFO 14480 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-11T10:07:25.677+02:00  INFO 14480 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-05-11T10:07:25.717+02:00  WARN 14480 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource logs.]
+2026-05-11T10:07:32.326+02:00  WARN 14480 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource logs.html.]
+2026-05-11T10:08:27.849+02:00  WARN 14480 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource logs.]
+2026-05-11T10:09:23.901+02:00  WARN 14480 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource logs.html.]
+2026-05-11T10:11:25.445+02:00  INFO 14480 --- [rysolvia] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T10:11:25.447+02:00  INFO 14480 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-11T10:11:25.451+02:00  INFO 14480 --- [rysolvia] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-11T10:11:32.232+02:00  INFO 15002 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Starting RysolviaApplication using Java 21.0.10 with PID 15002 (/home/giovanni/Desktop/GPT/rysolvia/target/classes started by giovanni in /home/giovanni/Desktop/GPT/rysolvia)
+2026-05-11T10:11:32.233+02:00 DEBUG 15002 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-05-11T10:11:32.233+02:00  INFO 15002 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-11T10:11:32.260+02:00  INFO 15002 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-11T10:11:32.261+02:00  INFO 15002 --- [rysolvia] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-11T10:11:32.943+02:00  INFO 15002 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-11T10:11:32.978+02:00  INFO 15002 --- [rysolvia] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
+2026-05-11T10:11:33.473+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-11T10:11:33.481+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T10:11:33.481+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T10:11:33.516+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-11T10:11:33.517+02:00  INFO 15002 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1256 ms
+2026-05-11T10:11:33.725+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-11T10:11:33.758+02:00  INFO 15002 --- [rysolvia] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-11T10:11:33.776+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-11T10:11:33.898+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-11T10:11:33.913+02:00  INFO 15002 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-11T10:11:34.017+02:00  INFO 15002 --- [rysolvia] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@73b9de96
+2026-05-11T10:11:34.018+02:00  INFO 15002 --- [rysolvia] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-11T10:11:34.036+02:00  WARN 15002 --- [rysolvia] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-11T10:11:34.534+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-11T10:11:34.563+02:00  INFO 15002 --- [rysolvia] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11T10:11:34.925+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-11T10:11:35.168+02:00  WARN 15002 --- [rysolvia] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-11T10:11:35.607+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@60700565, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18d2369, org.springframework.security.web.context.SecurityContextHolderFilter@180de2df, org.springframework.security.web.header.HeaderWriterFilter@53ba09a6, org.springframework.web.filter.CorsFilter@339b454a, org.springframework.security.web.authentication.logout.LogoutFilter@435f6b4f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@36b6c548, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@364497fc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75f65b40, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15538a02, org.springframework.security.web.access.ExceptionTranslationFilter@771f6b59, org.springframework.security.web.access.intercept.AuthorizationFilter@42e4c273]
+2026-05-11T10:11:36.047+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-11T10:11:36.093+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-11T10:11:36.163+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10000 (http)
+2026-05-11T10:11:36.165+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T10:11:36.165+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-11T10:11:36.176+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-05-11T10:11:36.176+02:00  INFO 15002 --- [rysolvia] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 80 ms
+2026-05-11T10:11:36.190+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2026-05-11T10:11:36.229+02:00  INFO 15002 --- [rysolvia] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10000 (http) with context path ''
+2026-05-11T10:11:36.243+02:00  INFO 15002 --- [rysolvia] [restartedMain] c.boymask.rysolvia.RysolviaApplication   : Started RysolviaApplication in 4.256 seconds (process running for 4.504)
+2026-05-11T10:11:36.904+02:00  INFO 15002 --- [rysolvia] [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as ba170f80049b
+2026-05-11T10:11:43.919+02:00  INFO 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-11T10:11:43.919+02:00  INFO 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-11T10:11:43.921+02:00  INFO 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-05-11T10:11:43.958+02:00  WARN 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource logs.html.]
+2026-05-11T10:12:00.077+02:00  WARN 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource dashboard.html.]
+2026-05-11T10:12:15.521+02:00  WARN 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource dashboard.]
+2026-05-11T10:12:25.685+02:00  WARN 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource dashboard.]
+2026-05-11T10:12:26.894+02:00  WARN 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource dashboard.html.]
+2026-05-11T10:12:29.076+02:00  WARN 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource logs.html.]
+2026-05-11T10:13:07.035+02:00  WARN 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource home.html.]
+2026-05-11T10:13:42.018+02:00  WARN 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource logs.]
+2026-05-11T10:16:15.966+02:00  WARN 15002 --- [rysolvia] [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/logs.html.]

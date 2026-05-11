@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+body{
+    background:black;
+    color:#00ff00;
+    font-family:monospace;
+}
+
+pre{
+    white-space: pre-wrap;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Application Logs</h2>
+
+<pre id="logs"></pre>
+
+<script>
+
+async function loadLogs(){
+
+    const response =
+        await fetch('/admin/logs');
+
+    const text = await response.text();
+
+    document.getElementById("logs").innerText = text;
+}
+
+loadLogs();
+
+setInterval(loadLogs, 2000);
+
+</script>
+
+</body>
+
+</html>
