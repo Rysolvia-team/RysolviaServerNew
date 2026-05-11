@@ -19,6 +19,7 @@ public class UsersService {
 	@Autowired
 	StatusService statusService;
 
+	@Transactional
 	public User getUser(String id) {
 		User user = userRepository.findByUserId(id);
 		if (user == null) {

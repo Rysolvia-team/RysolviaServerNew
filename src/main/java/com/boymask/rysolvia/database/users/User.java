@@ -1,7 +1,5 @@
 package com.boymask.rysolvia.database.users;
 
-import java.util.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

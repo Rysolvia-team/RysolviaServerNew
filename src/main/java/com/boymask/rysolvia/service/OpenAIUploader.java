@@ -24,18 +24,19 @@ public class OpenAIUploader {
 
 	public OpenAIUploader(String apiKey, GptService gptService) {
 		this.apiKey = apiKey;
-		this.gptService=gptService;
+		this.gptService = gptService;
 	}
 
-	public HttpResponse<String> uploadFilesSequentially(List<String> base64Files, int index, ArrayList<String> fileIds, String user) {
+	public HttpResponse<String> uploadFilesSequentially(List<String> base64Files, int index, ArrayList<String> fileIds,
+			String user) {
 
 		if (index >= base64Files.size()) {
 
 			System.out.println("Upload completato");
 
 			HttpResponse<String> ret = analyzeMultipleFiles(fileIds, user);
-logger.debug("FINITO ANALIZE");
-			
+			logger.debug("FINITO ANALIZE");
+
 			return ret;
 		}
 
@@ -81,13 +82,13 @@ logger.debug("FINITO ANALIZE");
 			}
 
 		} catch (Exception e) {
-
+			logger.error(e.getMessage(), e);
 			e.printStackTrace();
 		}
 
 		// prossimo file
 		return uploadFilesSequentially(base64Files, index + 1, fileIds, user);
-	
+
 	}
 
 	private byte[] buildMultipartBody(String boundary, byte[] fileBytes, String fileName) throws IOException {
@@ -166,9 +167,9 @@ logger.debug("FINITO ANALIZE");
 			logger.debug("HTTP CODE: " + response.statusCode());
 
 			logger.debug("RESPONSE: " + response.body());
-			
+
 			gptService.getTokens(new JSONObject(response.body()), user);
-			
+
 			return response;
 
 //			if (response.statusCode() >= 200 && response.statusCode() < 300) {
@@ -181,10 +182,10 @@ logger.debug("FINITO ANALIZE");
 //			}
 
 		} catch (Exception e) {
-
+			logger.error(e.getMessage(), e);
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 }
