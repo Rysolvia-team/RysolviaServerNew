@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuovo prodotto</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        form {
+            width: 450px;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-row label {
+            width: 150px;
+            font-weight: bold;
+        }
+
+        .form-row input {
+            flex: 1;
+            padding: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Nuovo prodotto</h1>
+
+<form th:action="@{/web/products/save}"
+      th:object="${product}"
+      method="post">
+
+    <div class="form-row">
+        <label>Nome:</label>
+
+        <input type="text"
+               th:field="*{name}"
+               required />
+    </div>
+
+    <div class="form-row">
+        <label>Prezzo:</label>
+
+        <input type="number"
+               step="0.01"
+               th:field="*{prezzo}"
+               required />
+    </div>
+
+    <div class="form-row">
+        <label>Descrizione:</label>
+
+        <input type="text"
+               th:field="*{description}" />
+    </div>
+
+    <div class="form-row">
+        <label>Numero bollette:</label>
+
+        <input type="number"
+               step="1"
+               th:field="*{numero_bollette}"
+               required />
+    </div>
+
+    <button type="submit">
+        Salva
+    </button>
+
+</form>
+
+<br>
+
+<a th:href="@{/web/products}">
+    Torna alla lista
+</a>
+
+</body>
+</html>
