@@ -40,6 +40,12 @@ public class WebController {
 		model.addAttribute("products", products);
 		return "products";
 	}
+	@GetMapping("/users")
+	public String users(Model model) {
+		List<User> users = usersRepo.findAll();
+		model.addAttribute("users", users);
+		return "users";
+	}
 	@GetMapping("/logs")
 	public String products() {
 		
