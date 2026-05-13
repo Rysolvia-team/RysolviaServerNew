@@ -40,4 +40,9 @@ public class WebController {
 		model.addAttribute("products", products);
 		return "products";
 	}
+	@GetMapping("/logs")
+	public String products() {
+		
+		return "logs";
+	}
 }
